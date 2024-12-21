@@ -1,6 +1,6 @@
 
 
-let clientes = [];
+let clientes = JSON.parse(localStorage.getItem('clientes')) || [];
 
 document.getElementById('formCadastro').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -19,11 +19,15 @@ document.getElementById('formCadastro').addEventListener('submit', function (eve
     };
 
     clientes.push(cliente);
+    salvarClientesNoLocalStorage();
     atualizarListaClientes();
 
     document.getElementById('formCadastro').reset();
 });
 
+function salvarClientesNoLocalStorage() {
+    localStorage.setItem('clientes', JSON.stringify(clientes));
+}
 
 function atualizarListaClientes() {
     const lista = document.getElementById('listaClientes');
@@ -32,7 +36,6 @@ function atualizarListaClientes() {
     clientes.forEach(cliente => {
         const li = document.createElement('li');
         li.textContent = `${cliente.nome} - ${cliente.dataNascimento} - ${cliente.telefone}`;
-
 
         const btnExcluir = document.createElement('button');
         btnExcluir.textContent = 'Excluir';
@@ -45,18 +48,19 @@ function atualizarListaClientes() {
 
 function excluirCliente(id) {
     clientes = clientes.filter(cliente => cliente.id !== id);
+    salvarClientesNoLocalStorage();
     atualizarListaClientes();
 }
-
 
 function verificarAniversarios() {
     const hoje = new Date();
     const diaHoje = hoje.getDate();
     const mesHoje = hoje.getMonth() + 1;
+
     const aniversariantes = clientes.filter(cliente => {
         const [ano, mes, dia] = cliente.dataNascimento.split('-');
-        const mesNascimento = parseInt(mes, 10);  
-        const diaNascimento = parseInt(dia, 10);  
+        const mesNascimento = parseInt(mes, 10);
+        const diaNascimento = parseInt(dia, 10);
 
         return diaHoje === diaNascimento && mesHoje === mesNascimento;
     });
@@ -78,3 +82,6 @@ function exibirLembretesAniversarios(aniversariantes) {
         });
     }
 }
+
+
+atualizarListaClientes();
