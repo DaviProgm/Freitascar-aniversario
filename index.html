@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro e Aniversário</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="img">
+        <img src="./467182596_958994359456029_7504789379305393758_n-removebg-preview.png" alt="">
+    </div>
+    <h1>Cadastro de Clientes</h1>
+    <form id="formCadastro">
+        <input type="text" id="nome" placeholder="Nome" required>
+        <input type="date" id="dataNascimento" required>    
+        <input type="tel" id="telefone" placeholder="Telefone" required>
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <h2>Clientes Cadastrados</h2>
+    <ul id="listaClientes"></ul>
+
+    <h2>Aniversariantes de Hoje</h2>
+    <ul id="listaAniversariantes"></ul>
+
+    <button type="button" onclick="verificarAniversarios()">Verificar Aniversários</button>
+
+    <script src="script.js"></script> 
+    
+</body>
+</html>

@@ -1,0 +1,209 @@
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+h1 {
+    color: #f30000;
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    text-align: center;
+    justify-content: center;
+}
+
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    margin-left:-9px ;
+}
+
+button[type="submit"] {
+    background-color: #ff0000;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #080808;
+    color: white;
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    width: 300px;
+}
+
+li {
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+}
+
+button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+
+#listaAniversariantes li {
+    background-color: #ffffff;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    text-align: center;
+}
+
+
+button[type="button"] {
+    background-color: #ff0000;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+
+    display: flex;
+}
+
+button[type="button"]:hover {
+    background-color: #000000;
+}
+img{
+    width: 250px;
+    margin-right: 855px;
+    margin-bottom: -185px;
+}
+@media (max-width: 600px) {
+    .img img{
+    display: flex;
+    margin-left: 850px;
+    margin-bottom: -52px;
+    }
+    body {
+        padding: 10px;
+    }
+
+    form {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    button[type="submit"], button[type="button"] {
+        font-size: 1rem;
+    }
+
+    li {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 0.8rem;
+    }
+}
+
+
+@media (max-width: 320px) {
+   
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+    h1 {
+        font-size: 1.3rem; 
+    }
+
+    form {
+        padding: 10px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    input, button[type="submit"], button[type="button"] {
+        font-size: 0.9rem; 
+        padding: 8px;
+    }
+
+    li {
+        font-size: 0.8rem;
+    }
+
+    button {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+img{
+    display: flex;
+    flex-direction: column;
+}
+}
+
+@media (max-width: 768px) {
+    form {
+        width: 80%;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}
